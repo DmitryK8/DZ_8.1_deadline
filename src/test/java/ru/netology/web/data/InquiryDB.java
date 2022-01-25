@@ -13,7 +13,7 @@ public class InquiryDB {
     @SneakyThrows
     public static String getVerificationCode(String user) {
         val conn = DriverManager.getConnection(
-                "jdbc:mysql://localhost:3306/app", "user", "pass"
+                "jdbc:mysql://localhost:3306/app", "app", "pass"
         );
         val getId = "SELECT id FROM users WHERE login = '" + user + "'";
         String id = runner.query(conn, getId, new ScalarHandler<>());
@@ -24,7 +24,7 @@ public class InquiryDB {
     @SneakyThrows
     public static String getUserStatus(String user) {
         val conn = DriverManager.getConnection(
-                "jdbc:mysql://localhost:3306/app", "user", "pass"
+                "jdbc:mysql://localhost:3306/app", "app", "pass"
         );
 
         val getStatus = "SELECT status FROM users WHERE login = '" + user + "'";
@@ -34,7 +34,7 @@ public class InquiryDB {
     @SneakyThrows
     public static void deleteFromDB() {
         val conn = DriverManager.getConnection(
-                "jdbc:mysql://localhost:3306/app", "user", "pass"
+                "jdbc:mysql://localhost:3306/app", "app", "pass"
         );
         runner.execute(conn, "DELETE FROM auth_codes");
         runner.execute(conn, "DELETE FROM cards");

@@ -32,11 +32,11 @@ public class TestSql {
     void shouldBlockPassword() {
         var wrongPass = new AuthInfo(getAuthInfo().getId(), getAuthInfo().getLogin(), "123qwerty");
         loginPage = new UserLogin();
-        loginPage.login(wrongPass);
+        loginPage.userLogin(wrongPass);
         loginPage.error();
-        loginPage.login(wrongPass);
+        loginPage.userLogin(wrongPass);
         loginPage.error();
-        loginPage.login(wrongPass);
+        loginPage.userLogin(wrongPass);
         loginPage.error();
         String actualStatus = getUserStatus(getAuthInfo().getLogin());
         assertEquals("blocked", actualStatus);

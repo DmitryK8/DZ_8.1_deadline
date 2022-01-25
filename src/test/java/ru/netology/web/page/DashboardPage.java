@@ -11,5 +11,4 @@ public class DashboardPage {
     public DashboardPage() {
         heading.shouldBe(visible);
     }
-
 }

@@ -20,5 +20,4 @@ public class Verification {
         submitButton.click();
         return new DashboardPage();
     }
-
 }

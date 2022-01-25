@@ -16,7 +16,7 @@ public class UserLogin {
 
 
 
-    public void login(DataHelper.AuthInfo info) {
+    public void userLogin(DataHelper.AuthInfo info) {
         loginField.sendKeys(CONTROL + "a", DELETE);
         loginField.setValue(info.getLogin());
         passwordField.sendKeys(CONTROL + "a", DELETE);
@@ -26,12 +26,11 @@ public class UserLogin {
     }
 
     public Verification validLogin(DataHelper.AuthInfo info) {
-        login(info);
+        userLogin(info);
         return new Verification();
     }
 
     public void error() {
         errorInput.shouldBe(visible);
     }
-
 }
