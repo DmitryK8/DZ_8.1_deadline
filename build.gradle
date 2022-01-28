@@ -19,6 +19,7 @@ dependencies {
     testImplementation 'mysql:mysql-connector-java:8.0.25'
     testImplementation 'commons-dbutils:commons-dbutils:1.7'
     testImplementation 'com.codeborne:selenide:6.1.2'
+    testImplementation'io.qameta.allure:allure-selenide:2.13.9'
 }
 
 test {
